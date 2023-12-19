@@ -131,6 +131,7 @@ function App() {
         </Route>
 
         {/* Redirect to Home for unmatched routes */}
+
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
