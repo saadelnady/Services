@@ -37,11 +37,12 @@ function App() {
   const isAdmin = user?.user?.role === 'Admin';
   const isGuest = !isUser && !isCompany && !isAdmin;
 
-  if (user === undefined) return (
-    <div className='h-screen w-screen flex justify-center items-center ' >
-      <Spinner />
-    </div>
-  )
+  if (user === undefined)
+    return (
+      <div className="h-screen w-screen flex justify-center items-center ">
+        <Spinner />
+      </div>
+    );
 
   // menu
   const { isMenu, toggleMenu } = useContext(MenuContext);
@@ -50,9 +51,9 @@ function App() {
   return (
     <div className={`${isDarkMode ? 'dark' : 'light'} font-cairo bg-gray-50 dark:bg-gray-900 overflow-y-auto`}>
       <ToastContainer />
-      {isAdmin ? <AdminMenu /> : <Menu />}
+      {/* {isAdmin ? <AdminMenu /> : <Menu />} */}
       <Routes>
-        {/* User Routes */}
+        {/*    
         <Route
           path="/"
           element={
@@ -92,7 +93,6 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Route>
 
-        {/* Dashboard Routes */}
 
         <Route
           path="/dashboard"
@@ -127,9 +127,8 @@ function App() {
             }
           />
           <Route path="*" element={<Navigate to={'/dashboard/services'} />} />
-        </Route>
+        </Route> */}
 
-        {/* Redirect to Home for unmatched routes */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
